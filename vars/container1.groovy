@@ -34,12 +34,10 @@ pipeline {
             cd eng-docker
 	    '''
 			//PATCH_VERSION="${PATCH_VERSION}"
-			if [[ -z "${PATCH_VERSION}" ]]
-			then
+			if ( "${PATCH_VERSION}" )
             		echo "true"
 			else
 			echo "false"
-			fi
             
             }
         }
