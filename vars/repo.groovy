@@ -3,7 +3,7 @@ pipeline {
     agent any 
         stage ('Code Checkout') {
         steps{ 
-	            git branch: "${BRANCH}",
+	     git branch: "${BRANCH}",
              url: "${repoUrl}"
             }            
         }
