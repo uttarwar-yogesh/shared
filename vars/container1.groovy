@@ -32,7 +32,6 @@ pipeline {
             sh '''
             pwd
             ls -la
-            cd eng-docker
 	    '''
 		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
