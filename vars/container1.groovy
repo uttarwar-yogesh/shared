@@ -7,8 +7,8 @@ pipeline {
             sh '''
             rm -rf *
             ls
-	    echo ${repoUrl}
-	    echo ${BRANCH}
+	    echo "${repoUrl}"
+	    echo "${BRANCH}"
 	    echo ${JDK_VERSION}
 	    echo ${MVN_VERSION}
 	    echo ${WL_VERSION}
@@ -18,9 +18,10 @@ pipeline {
         stage ('Code Checkout') {
         steps{ 
             sh '''
-            git clone ${repoUrl}
-            cd eng-docker
-            git checkout ${BRANCH}
+            // git clone ${repoUrl}
+            // cd eng-docker
+            // git checkout ${BRANCH}
+	    
             ls -l
             '''
             }            
