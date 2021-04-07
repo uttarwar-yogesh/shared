@@ -33,6 +33,7 @@ pipeline {
             ls -la
             cd eng-docker
 	    '''
+		echo "${PATCH_VERSION}"
 			//PATCH_VERSION="${PATCH_VERSION}"
 			if ( "${PATCH_VERSION}" )
             		echo "true"
