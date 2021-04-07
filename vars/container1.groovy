@@ -40,7 +40,7 @@ pipeline {
             		echo "true"
 			
 			def scriptFileContent = libraryResource( 'build-base-image.sh' )
-			sh scriptFileContent  "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
+			sh scriptFileContent
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
 			}
