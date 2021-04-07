@@ -34,6 +34,7 @@ pipeline {
             ls -la
             cd eng-docker
 	    '''
+		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
 			if ( "${PATCH_VERSION}" )
 			{	
@@ -43,6 +44,7 @@ pipeline {
 			{
 			echo "false"
 			}
+		}
             
             }
         }
