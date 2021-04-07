@@ -4,26 +4,25 @@ pipeline {
     stages{
         stage ('Cleaning') {
         steps{
-            sh '''
+
             rm -rf *
             ls
 	    echo "${repoUrl}"
 	    echo "${BRANCH}"
-	    echo ${JDK_VERSION}
-	    echo ${MVN_VERSION}
-	    echo ${WL_VERSION}
-            '''
+	    echo "${JDK_VERSION}"
+	    echo "${MVN_VERSION}"
+	    echo "${WL_VERSION}"
+
             }            
         }
         stage ('Code Checkout') {
         steps{ 
-            sh '''
+            
             // git clone ${repoUrl}
             // cd eng-docker
             // git checkout ${BRANCH}
-	    
-            ls -l
-            '''
+	     git branch: "${BRANCH}",
+             url: "${repoUrl}"
             }            
         }
         stage ('Building Docker Image') {
