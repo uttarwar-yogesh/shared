@@ -38,10 +38,14 @@ pipeline {
 			if ( "${PATCH_VERSION}" )
 			{	
             		echo "true"
+			
+			'./build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
+			
 			}
 			else
 			{
 			echo "false"
+			'./build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" 
 			}
 		}
             
