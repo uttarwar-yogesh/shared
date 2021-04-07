@@ -13,6 +13,7 @@ pipeline {
 	    echo "${JDK_VERSION}"
 	    echo "${MVN_VERSION}"
 	    echo "${WL_VERSION}"
+	    echo "${PATCH_VERSION}"
 		
             }            
         }
@@ -33,7 +34,6 @@ pipeline {
             ls -la
             cd eng-docker
 	    '''
-		echo "${PATCH_VERSION}"
 			//PATCH_VERSION="${PATCH_VERSION}"
 			if ( "${PATCH_VERSION}" )
             		echo "true"
