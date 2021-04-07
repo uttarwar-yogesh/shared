@@ -7,6 +7,11 @@ pipeline {
             sh '''
             rm -rf *
             ls
+	    echo ${repoUrl}
+	    echo ${BRANCH}
+	    echo ${JDK_VERSION}
+	    echo ${MVN_VERSION}
+	    echo ${WL_VERSION}
             '''
             }            
         }
