@@ -32,14 +32,15 @@ pipeline {
             pwd
             ls -la
             cd eng-docker
+	    '''
 			PATCH_VERSION="${PATCH_VERSION:-}"
-			if [[ -z ${PATCH_VERSION} ]]
+			if [[ -z "${PATCH_VERSION}" ]]
 			then
-            ./build-base-image.sh ${JDK_VERSION} ${MVN_VERSION} ${WL_VERSION}
+            		echo "true"
 			else
-			./build-base-image.sh ${JDK_VERSION} ${MVN_VERSION} ${WL_VERSION} ${PATCH_VERSION} ${PATCH_PATH}
+			echo "false"
 			fi
-            '''
+            
             }
         }
         stage ('Pushing Docker Image') {
