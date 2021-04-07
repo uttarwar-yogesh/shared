@@ -1,4 +1,4 @@
-def call(String repoUrl, String BRANCH, String JDK_VERSION, String MVN_VERSION, String WL_VERSION, String PATCH_VERSION, String PATCH_PATH) { 
+def call(String repoUrl, String BRANCH) { 
 pipeline {
     agent any 
         stage ('Code Checkout') {
