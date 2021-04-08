@@ -36,7 +36,7 @@ pipeline {
             sh '''
             pwd
             ls -la
-	    ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
+	    ./build-base-image.sh '${JDK_VERSION}' '${MVN_VERSION}' '${WL_VERSION}' '${PATCH_VERSION}' '${PATCH_PATH}'
 	    '''
 		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
