@@ -8,6 +8,7 @@ pipeline {
             rm -rf *
             ls
 	    '''
+	    println JDK_VERSION
 	    echo "${repoUrl}"
 	    echo "${BRANCH}"
 	    echo "${JDK_VERSION}"
