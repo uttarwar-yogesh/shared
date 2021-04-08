@@ -51,7 +51,7 @@ pipeline {
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
 			def cmd = [ "/bin/bash", "-c", "build-base-image.sh", "$JDK_VERSION", "$MVN_VERSION", "$WL_VERSION", "$PATCH_VERSION", "$PATCH_PATH" ]
-				
+			println cmd
 			// def cmd = [ "/bin/bash", "-c", "build-base-image.sh", '+JDK_VERSION+' '+MVN_VERSION+' '+WL_VERSION+' '+PATCH_VERSION+' '+PATCH_PATH+' ]
 			def sout = new StringBuffer()
 			def serr = new StringBuffer()	
