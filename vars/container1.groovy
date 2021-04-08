@@ -38,7 +38,7 @@ pipeline {
 			if ( "${PATCH_VERSION}" )
 			{	
             		echo "true"
-			File script = new File('./build-base-image.sh')
+			File script = new File('./var/lib/jenkins/workspace/New-containerbuild-base-image.sh')
 			script.getText().execute()
 			// "build-base-image.sh".execute()
 			// def scriptFileContent = libraryResource( '/var/lib/jenkins/workspace/New-containerbuild-base-image.sh' )
