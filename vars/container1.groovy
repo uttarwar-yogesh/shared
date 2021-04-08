@@ -42,9 +42,9 @@ pipeline {
            		 pwd
            		 ls -la
 	   		 '''
-			File script = new File('./var/lib/jenkins/workspace/New-container/build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" ')
-			script.getText().execute()
-			// "./build-base-image.sh".execute()
+			// File script = new File('./var/lib/jenkins/workspace/New-container/build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" ')
+			// script.getText().execute()
+			 "sh ./build-base-image.sh".execute()
 			// def scriptFileContent = libraryResource( '/var/lib/jenkins/workspace/New-containerbuild-base-image.sh' )
 		        // sh scriptFileContent
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
