@@ -38,9 +38,11 @@ pipeline {
 			if ( "${PATCH_VERSION}" )
 			{	
             		echo "true"
-			
-			def scriptFileContent = libraryResource( 'build-base-image.sh' )
-			sh scriptFileContent
+			File script = new File('build-base-image.sh')
+			script.getText().execute()
+				
+			// def scriptFileContent = libraryResource( 'build-base-image.sh' )
+		        // sh scriptFileContent
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
 			}
