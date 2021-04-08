@@ -6,7 +6,10 @@ pipeline {
         steps{
 	    sh '''
             rm -rf *
+	    pwd
             ls
+	    cp /tmp/1.txt .
+	    ls 
 	    '''
 	    println JDK_VERSION
 	    echo "${repoUrl}"
@@ -50,13 +53,13 @@ pipeline {
 		        // sh scriptFileContent
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
-			def cmd = [ "/bin/bash", "-c", "build-base-image.sh", "$JDK_VERSION", "$MVN_VERSION", "$WL_VERSION", "$PATCH_VERSION", "$PATCH_PATH" ]
-			println cmd
+			// def cmd = [ "/bin/bash", "-c", "build-base-image.sh", "$JDK_VERSION", "$MVN_VERSION", "$WL_VERSION", "$PATCH_VERSION", "$PATCH_PATH" ]
+			// println cmd
 			// def cmd = [ "/bin/bash", "-c", "build-base-image.sh", '+JDK_VERSION+' '+MVN_VERSION+' '+WL_VERSION+' '+PATCH_VERSION+' '+PATCH_PATH+' ]
 			def sout = new StringBuffer()
 			def serr = new StringBuffer()	
 			
-			def proc = cmd.execute()
+			//def proc = cmd.execute()
 			proc.consumeProcessOutput( sout, serr)
 			proc.waitForProcessOutput()
 			println "out> $sout"
