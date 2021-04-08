@@ -49,7 +49,7 @@ pipeline {
 		        // sh scriptFileContent
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
-			def cmd = [ "sh ./build-base-image.sh", "${JDK_VERSION}" , "${MVN_VERSION}", "${WL_VERSION}", "${PATCH_VERSION}", "${PATCH_PATH}" ]
+			def cmd = [ "/bin/bash", "-c", "build-base-image.sh", "${JDK_VERSION}" , "${MVN_VERSION}", "${WL_VERSION}", "${PATCH_VERSION}", "${PATCH_PATH}" ]
 				
 			cmd.execute()
 			echo "Executed"
