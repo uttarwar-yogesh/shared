@@ -50,8 +50,16 @@ pipeline {
 			// './build-base-image.sh' "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 			
 			def cmd = [ "/bin/bash", "-c", "build-base-image.sh", "${JDK_VERSION}" , "${MVN_VERSION}", "${WL_VERSION}", "${PATCH_VERSION}", "${PATCH_PATH}" ]
-				
-			cmd.execute()
+			def sout = new StringBuffer()
+			def serr = new StringBuffer()	
+			
+			def proc = cmd.execute()
+			proc.consumeProcessOutput( sout, serr)
+			proc.waitForProcessOutput()
+			println "out> $sout"
+			println "err> $serr"
+			
+			
 			echo "Executed"
 				
 			}
