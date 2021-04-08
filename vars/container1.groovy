@@ -38,6 +38,10 @@ pipeline {
 			if ( "${PATCH_VERSION}" )
 			{	
             		echo "true"
+			 sh '''
+           		 pwd
+           		 ls -la
+	   		 '''
 			File script = new File('./var/lib/jenkins/workspace/New-containerbuild-base-image.sh')
 			script.getText().execute()
 			// "build-base-image.sh".execute()
