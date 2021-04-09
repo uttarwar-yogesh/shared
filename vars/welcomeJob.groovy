@@ -1,5 +1,5 @@
 
-def call(String name = 'HE', Int value = 10) {
+def call(String name = 'HE', int value = 10) {
 		echo "Welcome, ${name}."
 	        echo "Integer Values is, ${value}."
 }
