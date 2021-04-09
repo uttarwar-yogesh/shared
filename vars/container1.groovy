@@ -1,5 +1,4 @@
 def call(String repoUrl, String BRANCH, String JDK_VERSION, String MVN_VERSION, String WL_VERSION, String PATCH_VERSION, String PATCH_PATH)
-def Java_Version = "JDK_VERSION"
 { 
 pipeline {
     agent any 
