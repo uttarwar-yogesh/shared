@@ -2,7 +2,7 @@ def call(String hostname, String targethostname, String username, String passwor
 node {
         stage ('Coping files') {
 
-	    sh 'rsync --rsh="sshpass -p  password ssh -o StrictHostKeyChecking=no -l username" hostname:src targethostname:dest'
+		sh 'rsync --rsh="sshpass -p  ${password} ssh -o StrictHostKeyChecking=no -l ${username}" ${hostname}:${src} ${targethostname}:${dest}'
            
      }
    }
