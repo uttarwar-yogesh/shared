@@ -36,14 +36,15 @@ pipeline {
             sh '''
             pwd
             ls -la
+	    def s = "Yogesh"
 	    echo "$JDK_VERSION"
 	    echo '$JDK_VERSION'
 	    echo "${JDK_VERSION}"
 	    echo '${JDK_VERSION}'
-	    println "$JDK_VERSION"
-	    println '$JDK_VERSION'
-	    println "${JDK_VERSION}"
-	    println '${JDK_VERSION}'
+	    println "$s"
+	    println '$s'
+	    println "${s}"
+	    println '${s}'
 	    ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 	    '''
 		script {
