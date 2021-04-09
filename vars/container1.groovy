@@ -36,8 +36,8 @@ pipeline {
             sh '''
             pwd
             ls -la
-	  
-	    # ./build-base-image.sh '8u281' '3.3.9' '12.2.1.2.0' '6880880' '/opt/media/patches'
+	    "echo $JDK_VERSION"
+	   
 	    ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 	    '''
 		script {
