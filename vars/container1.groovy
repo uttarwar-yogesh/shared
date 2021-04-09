@@ -10,6 +10,10 @@ pipeline {
             ls
 	    cp /tmp/1.txt .
 	    ls 
+	    
+	    sshpass -p "bumpyShow72@" scp -r yuttarwar@localhost:/tmp/1.txt /tmp/test/
+	    cd /tmp/test
+	    ls 
 	    '''
 	    println JDK_VERSION
 	    echo "${repoUrl}"
@@ -45,7 +49,7 @@ pipeline {
 	    println '$s'
 	    println "${s}"
 	    println '${s}'
-	    ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
+	    # ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
 	    '''
 		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
