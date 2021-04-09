@@ -38,20 +38,9 @@ pipeline {
         }
         stage ('Building Docker Image') {
         steps{
-            sh '''
-            pwd
-            ls -la
-	    def s = "Yogesh"
-	    echo "$JDK_VERSION"
-	    echo '$JDK_VERSION'
-	    echo "${JDK_VERSION}"
-	    echo '${JDK_VERSION}'
-	    println "$s"
-	    println '$s'
-	    println "${s}"
-	    println '${s}'
-	    # ./build-base-image.sh "${JDK_VERSION}" "${MVN_VERSION}" "${WL_VERSION}" "${PATCH_VERSION}" "${PATCH_PATH}"
-	    '''
+                def scriptPath = "build-base-image.sh"
+		def command = "bash -x $scriptPath $JDK_VERSION $MVN_VERSION $WL_VERSION $PATCH_VERSION $PATCH_PATH"
+		println command.execute().text
 		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
 			if ( "${PATCH_VERSION}" )
