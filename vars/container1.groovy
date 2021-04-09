@@ -11,7 +11,8 @@ pipeline {
 	    cp /tmp/1.txt .
 	    ls 
 	    
-	    sshpass -p "bumpyShow72@" -o 'StrictHostKeyChecking no' scp -r yuttarwar@localhost:/tmp/1.txt /tmp/test/
+	    rsync --rsh="sshpass -p bumpyShow72@ ssh -o StrictHostKeyChecking=no -l yuttarwar" localhost:/tmp/1.txt /tmp/test/
+	    
 	    cd /tmp/test
 	    ls 
 	    '''
