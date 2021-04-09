@@ -4,9 +4,9 @@ pipeline {
     stages{
         stage ('Coping files') {
         steps{
-	    sh '''
-	    "rsync --rsh=sshpass -p  ${password} ssh -o StrictHostKeyChecking=no -l ${username} ${hostname}:${src} ${targethostname}:${dest}"
-            '''
+	    
+	    'rsync --rsh=sshpass -p  ${password} ssh -o StrictHostKeyChecking=no -l ${username} ${hostname}:${src} ${targethostname}:${dest}'.execute()
+           
        }
      }
    }
