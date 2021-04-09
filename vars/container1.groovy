@@ -1,4 +1,6 @@
-def call(String repoUrl, String BRANCH, String JDK_VERSION, String MVN_VERSION, String WL_VERSION, String PATCH_VERSION, String PATCH_PATH) { 
+def call(String repoUrl, String BRANCH, String JDK_VERSION, String MVN_VERSION, String WL_VERSION, String PATCH_VERSION, String PATCH_PATH)
+def Java_Version = "JDK_VERSION"
+{ 
 pipeline {
     agent any 
     stages{
@@ -40,6 +42,7 @@ pipeline {
         steps{
                 
 		script {
+			sh "echo ${JDK_VERSION}"
 			def scriptPath = "build-base-image.sh"
 			def command = "bash -x $scriptPath $JDK_VERSION $MVN_VERSION $WL_VERSION $PATCH_VERSION $PATCH_PATH"
 			println command.execute().text
