@@ -38,10 +38,12 @@ pipeline {
         }
         stage ('Building Docker Image') {
         steps{
-                def scriptPath = "build-base-image.sh"
-		def command = "bash -x $scriptPath $JDK_VERSION $MVN_VERSION $WL_VERSION $PATCH_VERSION $PATCH_PATH"
-		println command.execute().text
+                
 		script {
+			def scriptPath = "build-base-image.sh"
+			def command = "bash -x $scriptPath $JDK_VERSION $MVN_VERSION $WL_VERSION $PATCH_VERSION $PATCH_PATH"
+			println command.execute().text
+			
 			//PATCH_VERSION="${PATCH_VERSION}"
 			if ( "${PATCH_VERSION}" )
 			{	
