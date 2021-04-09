@@ -37,7 +37,7 @@ pipeline {
             pwd
             ls -la
 	  
-	    ./build-base-image.sh '8u281', '3.3.9', '12.2.1.2.0', '6880880', '/opt/media/patches'
+	    ./build-base-image.sh '8u281' '3.3.9' '12.2.1.2.0' '6880880' '/opt/media/patches'
 	    '''
 		script {
 			//PATCH_VERSION="${PATCH_VERSION}"
