@@ -1,5 +1,7 @@
 def notify(status) {
+   println ${BUILD_USER_EMAIL}
    wrap([$class: 'BuildUser']) {
+      println ${BUILD_USER_EMAIL}
        emailext (
        subject: "${status}: Job ${env.JOB_NAME} ([${env.BUILD_NUMBER})",
        body: """
