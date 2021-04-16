@@ -15,14 +15,14 @@ properties([
     ])
 	
 node {
-	
+	environment {
 	hostname = "${params.hostname}"
 	targethostname = "${params.targethostname}"
 	username = "${params.username}"
 	password = "${params.password}"
 	src = "${params.src}"
 	dest = "${params.dest}"
-	
+	}
         stage ('Coping files') {
                 echo '${env.password}'
 		echo "${env.password}"
