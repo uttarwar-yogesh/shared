@@ -24,7 +24,8 @@ node {
 	dest = "${params.dest}"
 	
         stage ('Coping files') {
-                sh 'echo ${password}'
+                echo '${password}'
+		echo "${password}"
 		sh 'rsync --rsh="sshpass -p  ${password} ssh -o StrictHostKeyChecking=no -l ${username}" ${hostname}:${src} ${targethostname}:${dest}'
            
      }
