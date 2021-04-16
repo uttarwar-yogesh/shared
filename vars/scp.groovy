@@ -15,14 +15,14 @@ properties([
     ])
 	
 node {
-	{
+	
 	hostname = "${params.hostname}"
 	targethostname = "${params.targethostname}"
 	username = "${params.username}"
 	password = "${params.password}"
 	src = "${params.src}"
 	dest = "${params.dest}"
-	}
+	
         stage ('Coping files') {
 
 		sh 'rsync --rsh="sshpass -p  ${password} ssh -o StrictHostKeyChecking=no -l ${username}" ${hostname}:${src} ${targethostname}:${dest}'
