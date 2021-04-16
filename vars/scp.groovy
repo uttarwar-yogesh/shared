@@ -16,9 +16,9 @@ properties([
 	
 node {
 	environment {
-	targethostname = '${params.targethostname}'
-	username = '${params.username}'
-	password = '${params.password}'
+	targethostname = 'targethostname'
+	username = 'username'
+	password = 'password'
 	src = '${params.src}'
 	dest = '${params.dest}'
 	}
