@@ -12,3 +12,4 @@ node {
     sshPut remote: remote, from: 'abc.sh', into: '.'
   }
 }
+}
